@@ -9,3 +9,4 @@ __pycache__/
 users/migrations
 analytics/migrations
 vacancies/migrations
+db.sqlite3
