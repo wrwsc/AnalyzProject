@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Web-разработчик{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="center-header">Web-разработчик: Карьера и Аналитика</h1>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <nav class="side-menu" id="sideMenu">
+        <ul>
+            <li><a href="{% url 'pages:index' %}">Главная</a></li>
+            <li><a href="#">Общая статистика</a></li>
+            <li><a href="#">Востребованность</a></li>
+            <li><a href="#">География</a></li>
+            <li><a href="#">Навыки</a></li>
+            <li><a href="#">Последние вакансии</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Студент: Власенко Владислав Александрович, группа: РИ-230949</p>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>
