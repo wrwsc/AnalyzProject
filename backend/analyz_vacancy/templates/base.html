@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
 </head>
 <body>
+    <div class="background">
+        <img src="{% static 'images/snow1.gif' %}" alt="Snow Animation" class="snow-animation">
+    </div>
     <header>
         <h1 class="center-header">Web-разработчик: Карьера и Аналитика</h1>
         <div class="burger" id="burger">
@@ -19,11 +22,11 @@
     <nav class="side-menu" id="sideMenu">
         <ul>
             <li><a href="{% url 'pages:index' %}">Главная</a></li>
-            <li><a href="#">Общая статистика</a></li>
-            <li><a href="#">Востребованность</a></li>
-            <li><a href="#">География</a></li>
-            <li><a href="#">Навыки</a></li>
-            <li><a href="#">Последние вакансии</a></li>
+            <li><a href="{% url 'pages:statistics' %}">Общая статистика</a></li>
+            <li><a href="{% url 'pages:demand' %}">Востребованность</a></li>
+            <li><a href="{% url 'pages:geography' %}">География</a></li>
+            <li><a href="{% url 'pages:skills' %}">Навыки</a></li>
+            <li><a href="{% url 'pages:vacancies' %}">Последние вакансии</a></li>
         </ul>
     </nav>
 
@@ -36,6 +39,6 @@
         <p>Студент: Власенко Владислав Александрович, группа: РИ-230949</p>
     </footer>
 
-    <script src="static/js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
