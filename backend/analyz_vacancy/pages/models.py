@@ -11,7 +11,7 @@ class Page(models.Model):
 
 class Statistics(models.Model):
     title = models.CharField(max_length = 255, verbose_name = "Заголовок статистики")
-    image = models.ImageField(upload_to = 'images/', verbose_name = "Изображение статистики", blank = True, null = True)
+    image = models.ImageField(upload_to = 'media/images/', verbose_name = "Изображение статистики", blank = True, null = True)
 
     def __str__(self):
         return self.title

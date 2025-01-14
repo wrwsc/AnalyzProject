@@ -1,43 +1,34 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Общая статистика{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}
+    {% for stat in statistics %}
+        <h3>{{ stat.title }}</h3>
+    {% endfor %}
+{% endblock %}
 
 {% block content %}
-
-<div class="full-container">
-    {% for stat in statistics %}
-        <div class="statistic-item">
-            <h3>{{ stat.title }}</h3>
-            {% if stat.image %}
-                <img src="{{ stat.image.url }}" alt="{{ stat.title }}" class="statistic-image">
-            {% endif %}
-        </div>
-    {% endfor %}
-
-    <h3>Таблица</h3>
-    {% for table in tables %}
-        <div class="statistic-box">
-            {% if table.column_1 and table.column_2 %}
-                <table class="www">
-                    <thead>
-                        <tr>
-                            <th>{{ table.column_1 }}</th>
-                            <th>{{ table.column_2 }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for row in table.statistics.all %}
-                        <tr>
-                            <td>{{ row.column_1 }}</td>
-                            <td>{{ row.column_2 }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            {% else %}
-                <p>Данные для таблицы отсутствуют.</p>
-            {% endif %}
-        </div>
-    {% endfor %}
-</div>
+    <div class="full-container">
+        {% for stat in statistics %}
+            <div class="statistic-item">
+                <h3>{{ stat.title }}</h3>
+                {% if stat.image %}
+                    <img src="{{ stat.image.url }}" alt="{{ stat.title }}" class="analytics" />
+                {% endif %}
+            </div>
+            {% for table in stat.tables.all %}
+                <div class="statistic-box">
+                    {% if table.column_1 and table.column_2 %}
+                        <table class="www">
+                            <thead>
+                                <tr>
+                                    <th>{{ table.column_1 }}</th>
+                                    <th>{{ table.column_2 }}</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}

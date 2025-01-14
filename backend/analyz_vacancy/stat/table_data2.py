@@ -38,8 +38,12 @@ def convert_to_rub(row, exchange_rates):
 
 filtered_data = data[(data['salary_from'] <= 10_000_000) & (data['salary_to'] <= 10_000_000)]
 filtered_data['salary_rub'] = filtered_data.apply(lambda row: convert_to_rub(row, exchange_rates), axis=1)
-salary_trend = filtered_data.groupby('year')['salary_rub'].mean().reset_index()
-salary_trend['year'] = salary_trend['year'].astype(int)
 
-for index, row in salary_trend.iterrows():
-    print(f"Год: {row['year']}, Средняя зарплата: {row['salary_rub']:.2f} руб")
+city_salary = filtered_data.groupby('area_name')['salary_rub'].mean().reset_index()
+city_salary = city_salary.sort_values(by='salary_rub', ascending=False)
+
+print("Город | Средняя зарплата (руб)")
+print("----------------------------")
+for index, row in city_salary.iterrows():
+    print(f"{row['area_name']} | {row['salary_rub']:.2f}")
+

@@ -1,3 +1,5 @@
+from itertools import chain
+
 from django.shortcuts import render
 from pages.models import Page, Statistics, StatisticsTable
 

@@ -1,4 +1,7 @@
+from django.conf.urls.static import static
 from django.urls import path
+
+from analyz_vacancy import settings
 from . import views
 
 app_name = 'pages'
@@ -10,4 +13,4 @@ urlpatterns = [
     path('geography/', views.geography, name = 'geography'),
     path('skills/', views.skills, name = 'skills'),
     path('vacancies/', views.vacancies, name = 'vacancies'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

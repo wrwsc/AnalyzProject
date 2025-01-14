@@ -38,8 +38,10 @@ def convert_to_rub(row, exchange_rates):
 
 filtered_data = data[(data['salary_from'] <= 10_000_000) & (data['salary_to'] <= 10_000_000)]
 filtered_data['salary_rub'] = filtered_data.apply(lambda row: convert_to_rub(row, exchange_rates), axis=1)
-salary_trend = filtered_data.groupby('year')['salary_rub'].mean().reset_index()
-salary_trend['year'] = salary_trend['year'].astype(int)
 
-for index, row in salary_trend.iterrows():
-    print(f"Год: {row['year']}, Средняя зарплата: {row['salary_rub']:.2f} руб")
+vacancy_count_by_year = filtered_data.groupby('year').size().reset_index(name='vacancy_count')
+
+print("Год | Количество вакансий")
+print("-------------------------")
+for index, row in vacancy_count_by_year.iterrows():
+    print(f"{row['year']} | {row['vacancy_count']}")
