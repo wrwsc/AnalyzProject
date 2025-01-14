@@ -12,3 +12,4 @@ vacancies/migrations
 db.sqlite3
 statistics
 media
+staticfiles
