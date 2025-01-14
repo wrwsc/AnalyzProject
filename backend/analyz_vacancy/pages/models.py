@@ -11,7 +11,6 @@ class Page(models.Model):
 
 class Statistics(models.Model):
     title = models.CharField(max_length = 255, verbose_name = "Заголовок статистики")
-    description = models.TextField(verbose_name = "Описание статистики")
     image = models.ImageField(upload_to = 'images/', verbose_name = "Изображение статистики", blank = True, null = True)
 
     def __str__(self):
@@ -19,14 +18,12 @@ class Statistics(models.Model):
 
 
 class StatisticsTable(models.Model):
-    statistics = models.ForeignKey(Statistics, on_delete = models.CASCADE, related_name = 'tables',
-                                   verbose_name = "Общая статистика")
-    name = models.CharField(max_length = 255, verbose_name = "Название таблицы")
-    table = models.TextField(verbose_name = "Данные таблицы")
-    image = models.ImageField(upload_to = 'images/', verbose_name = "Изображение таблицы", blank = True, null = True)
+    statistics = models.ForeignKey(Statistics, on_delete=models.CASCADE, related_name='tables', verbose_name="Общая статистика")
+    column_1 = models.CharField(max_length=255, verbose_name="Колонка 1", null = True)
+    column_2 = models.CharField(max_length=255, verbose_name="Колонка 2", null = True)
 
     def __str__(self):
-        return self.name
+        return f"Таблица статистики: {self.statistics}"
 
 
 class SalaryDynamics(models.Model):

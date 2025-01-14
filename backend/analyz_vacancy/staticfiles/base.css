@@ -1,0 +1,203 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+}
+
+/* Заголовок */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+    margin-bottom: 0;
+}
+
+/* Заголовок */
+.center-header {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Стиль для бургер-меню */
+.burger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.burger span {
+    width: 30px;
+    height: 3px;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+/* Стили бокового меню */
+.side-menu {
+    position: fixed;
+    top: 80px;
+    left: -250px;
+    width: 250px;
+    height: calc(100vh - 80px);
+    background: #D1C7B7;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+
+/* Стили для элементов меню */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    padding: 0;
+    margin: 0;
+}
+
+
+.side-menu ul li a {
+    color: #333332;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-size: 20px;
+    border-bottom: 2px solid #737373;
+}
+
+.side-menu ul li a:hover {
+    background: #575d63;
+    transition: background 0.3s ease;
+}
+
+/* Контент */
+main {
+    margin-left: 250px;
+    padding: 120px 20px 60px;
+}
+
+/* Подвал */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    font-size: 28px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Бокового меню */
+.side-menu.active {
+    left: 0;
+}
+
+/* Стили для общего контейнера */
+.full-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #D1C7B7;
+    margin: 0;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 1400px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для заголовков внутри контейнера */
+.full-container h2 {
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Стили для абзацев */
+.full-container p {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Для изображения */
+.center-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Снегопад анимация */
+.snow-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    padding: 10px !important;
+    background-color: #f4f4f4 !important;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+    text-align: left !important;
+}
+
+.table th {
+    background-color: #333 !important;
+    color: white !important;
+}
+
+.table td {
+    background-color: #f9f9f9 !important;
+}

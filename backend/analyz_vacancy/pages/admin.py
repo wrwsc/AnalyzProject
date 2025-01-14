@@ -16,46 +16,10 @@ class StatisticsTableInline(admin.TabularInline):
     extra = 1
 
 
-class SalaryDynamicsInline(admin.TabularInline):
-    model = SalaryDynamics
-    extra = 1
-
-
-class VacancyDynamicsInline(admin.TabularInline):
-    model = VacancyDynamics
-    extra = 1
-
-
-class SalaryByCityInline(admin.TabularInline):
-    model = SalaryByCity
-    extra = 1
-
-
-class VacancyShareByCityInline(admin.TabularInline):
-    model = VacancyShareByCity
-    extra = 1
-
-
-class TopSkillsByYearInline(admin.TabularInline):
-    model = TopSkillsByYear
-    extra = 1
-
-
 @admin.register(Statistics)
 class StatisticsAdmin(admin.ModelAdmin):
     list_display = ('title',)
-    search_fields = ('title',)
-    inlines = [
-        StatisticsTableInline, SalaryDynamicsInline, VacancyDynamicsInline,
-        SalaryByCityInline, VacancyShareByCityInline, TopSkillsByYearInline
-    ]
-
-
-@admin.register(StatisticsTable)
-class StatisticsTableAdmin(admin.ModelAdmin):
-    list_display = ('name', 'statistics')
-    search_fields = ('name', 'statistics__title')
-    list_filter = ('statistics',)
+    inlines = [StatisticsTableInline]
 
 
 @admin.register(Vacancy)

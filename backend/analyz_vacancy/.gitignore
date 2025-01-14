@@ -11,3 +11,4 @@ analytics/migrations
 vacancies/migrations
 db.sqlite3
 statistics
+media

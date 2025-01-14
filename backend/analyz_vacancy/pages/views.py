@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from pages.models import Page, Statistics
+from pages.models import Page, Statistics, StatisticsTable
 
 
 def index(request):
@@ -8,8 +8,9 @@ def index(request):
 
 
 def statistics(request):
-    statistic = Statistics.objects.prefetch_related('tables').all()
-    return render(request, 'pages/statistics.html', {'statistic': statistic})
+    statistics = Statistics.objects.all()
+    tables = StatisticsTable.objects.all()
+    return render(request, 'pages/statistics.html', {'statistics': statistics, 'tables': tables})
 
 
 def demand(request):

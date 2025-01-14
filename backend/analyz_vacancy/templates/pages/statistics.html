@@ -3,7 +3,41 @@
 {% block title %}Общая статистика{% endblock %}
 
 {% block content %}
+
 <div class="full-container">
-    <h2>Общая статистика</h2>
+    {% for stat in statistics %}
+        <div class="statistic-item">
+            <h3>{{ stat.title }}</h3>
+            {% if stat.image %}
+                <img src="{{ stat.image.url }}" alt="{{ stat.title }}" class="statistic-image">
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <h3>Таблица</h3>
+    {% for table in tables %}
+        <div class="statistic-box">
+            {% if table.column_1 and table.column_2 %}
+                <table class="www">
+                    <thead>
+                        <tr>
+                            <th>{{ table.column_1 }}</th>
+                            <th>{{ table.column_2 }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in table.statistics.all %}
+                        <tr>
+                            <td>{{ row.column_1 }}</td>
+                            <td>{{ row.column_2 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Данные для таблицы отсутствуют.</p>
+            {% endif %}
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}
