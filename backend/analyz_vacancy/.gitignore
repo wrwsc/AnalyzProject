@@ -10,3 +10,4 @@ users/migrations
 analytics/migrations
 vacancies/migrations
 db.sqlite3
+statistics

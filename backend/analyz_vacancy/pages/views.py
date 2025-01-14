@@ -1,12 +1,15 @@
 from django.shortcuts import render
+from pages.models import Page, Statistics
 
 
 def index(request):
-    return render(request, 'pages/index.html')
+    page = Page.objects.first()
+    return render(request, 'pages/index.html', {'page': page})
 
 
 def statistics(request):
-    return render(request, 'pages/statistics.html')
+    statistic = Statistics.objects.prefetch_related('tables').all()
+    return render(request, 'pages/statistics.html', {'statistic': statistic})
 
 
 def demand(request):
