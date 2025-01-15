@@ -272,7 +272,6 @@ footer {
 }
 
 /* Медиазапросы для адаптивной верстки */
-/* Responsive layout for all pages */
 @media (max-width: 768px) {
     body {
         font-size: 90%;
