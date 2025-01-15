@@ -5,5 +5,31 @@
 {% block content %}
 <div class="full-container">
     <h2>Навыки</h2>
+    {% for stat in skill_statistics %}
+        <div class="statistic-item">
+            <div class="statistic-left">
+                <h3>{{ stat.title }}</h3>
+                {% if stat.image %}
+                    <img src="{{ stat.image.url }}" alt="{{ stat.title }}" class="analytics" />
+                {% endif %}
+            </div>
+            <div class="statistic-right">
+                {% for table in stat.tables.all %}
+                    <div class="statistic-box">
+                        {% if table.column_1 and table.column_2 %}
+                            <table class="www">
+                                <thead>
+                                    <tr>
+                                        <th>{{ table.column_1 }}</th>
+                                        <th>{{ table.column_2 }}</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

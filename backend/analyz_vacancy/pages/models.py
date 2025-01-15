@@ -90,3 +90,57 @@ class Vacancy(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class DemandStatistics(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Заголовок статистики")
+    image = models.ImageField(upload_to='media/images/', verbose_name="Изображение статистики", blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class DemandStatisticsTable(models.Model):
+    dstatistics = models.ForeignKey(DemandStatistics, on_delete=models.CASCADE, related_name='tables',
+                                    verbose_name="Востребованность")
+    column_1 = models.CharField(max_length=255, verbose_name="Колонка 1", null=True)
+    column_2 = models.CharField(max_length=255, verbose_name="Колонка 2", null=True)
+
+    def __str__(self):
+        return f"Таблица статистики востребованности: {self.dstatistics}"
+
+
+class GeoStatistics(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Заголовок статистики")
+    image = models.ImageField(upload_to='media/images/', verbose_name="Изображение статистики", blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class GeoStatisticsTable(models.Model):
+    geostatistics = models.ForeignKey(GeoStatistics, on_delete=models.CASCADE, related_name='tables',
+                                      verbose_name="География")
+    column_1 = models.CharField(max_length=255, verbose_name="Колонка 1", null=True)
+    column_2 = models.CharField(max_length=255, verbose_name="Колонка 2", null=True)
+
+    def __str__(self):
+        return f"Таблица статистики географии: {self.geostatistics}"
+
+
+class SkillStatistics(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Заголовок статистики")
+    image = models.ImageField(upload_to='media/images/', verbose_name="Изображение статистики", blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class SkillStatisticsTable(models.Model):
+    skillstatistics = models.ForeignKey(SkillStatistics, on_delete=models.CASCADE, related_name='tables',
+                                        verbose_name="Навыки")
+    column_1 = models.CharField(max_length=255, verbose_name="Колонка 1", null=True)
+    column_2 = models.CharField(max_length=255, verbose_name="Колонка 2", null=True)
+
+    def __str__(self):
+        return f"Таблица статистики навыков: {self.skillstatistics}"
