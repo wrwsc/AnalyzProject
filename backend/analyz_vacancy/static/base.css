@@ -260,25 +260,33 @@ footer {
     margin: 0;
 }
 
-@media (min-width: 768px) {
-    .side-menu {
-        display: block;
-    }
-
+@media (max-width: 480px) {
     .burger {
-        display: flex;
+        left: 10px;
+        top: 10px;
+        gap: 3px;
     }
-}
 
-@media (max-width: 768px) {
+    .burger span {
+        width: 25px;
+        height: 2px;
+    }
+
+    .side-menu ul li a {
+        font-size: 16px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     main {
-        margin-left: 0;
-        padding: 100px 20px 60px;
+        padding: 80px 10px 40px;
     }
 
     .full-container {
-        width: 100%;
-        padding: 20px;
+        padding: 20px 10px;
     }
 
     .statistic-item {
@@ -286,11 +294,7 @@ footer {
         align-items: center;
     }
 
-    .statistic-item .analytics {
-        width: 100%;
-        margin-right: 0;
-    }
-
+    .statistic-item .analytics,
     .statistic-item .statistic-box {
         width: 100%;
     }
