@@ -49,6 +49,7 @@ p {
     position: absolute;
     left: 20px;
     top: 20px;
+    z-index: 1002;
 }
 
 .burger span {
@@ -269,6 +270,14 @@ footer {
         display: flex;
         margin-right: 2px;
     }
+
+    .header {
+        z-index: 1000;
+    }
+
+    .side-menu {
+        z-index: 999;
+    }
 }
 
 /* Медиазапросы для адаптивной верстки */
@@ -312,7 +321,7 @@ footer {
     }
 
     .content{
-        font-size: auto;
+        font-size: 5px;
     }
 }
 
