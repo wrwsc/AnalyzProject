@@ -137,7 +137,8 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: #D1C7B7;
-    margin: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* Стили для заголовков внутри контейнера */
@@ -192,12 +193,6 @@ footer {
 @media (min-width: 768px) {
     .statistic-item {
         flex-direction: row;
-    }
-}
-
-@media (min-width: 768px) {
-    .full-container {
-        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -262,6 +257,11 @@ footer {
 
 @media (max-width: 480px) {
 
+    header {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
     body {
         font-size: 90%;
     }
@@ -278,6 +278,12 @@ footer {
         left: 10px;
         top: 10px;
         gap: 3px;
+        z-index: 1002;
+    }
+
+    .center-header {
+        font-size: 18px;
+        padding-right: 50px;
     }
 
     .burger span {
