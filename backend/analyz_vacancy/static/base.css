@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 /* Основные стили */
 body {
     font-family: Arial, sans-serif;
@@ -260,33 +261,33 @@ footer {
     margin: 0;
 }
 
-@media (max-width: 480px) {
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
     .burger {
-        left: 10px;
-        top: 10px;
-        gap: 3px;
+        display: flex;
     }
 
-    .burger span {
-        width: 25px;
-        height: 2px;
+    .side-menu {
+        left: -250px;
+        transition: left 0.3s ease;
     }
 
-    .side-menu ul li a {
-        font-size: 16px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
+    .side-menu.active {
+        left: 0;
     }
 
     main {
-        padding: 80px 10px 40px;
+        margin-left: 0;
+        padding: 100px 20px 60px;
     }
 
     .full-container {
-        padding: 20px 10px;
+        width: 100%;
+        padding: 20px;
     }
 
     .statistic-item {
@@ -294,8 +295,23 @@ footer {
         align-items: center;
     }
 
-    .statistic-item .analytics,
+    .statistic-item .analytics {
+        width: 100%;
+        margin-right: 0;
+    }
+
     .statistic-item .statistic-box {
         width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    main {
+        margin-left: 250px;
+    }
+
+    .side-menu {
+        display: block;
+        left: 0;
     }
 }
