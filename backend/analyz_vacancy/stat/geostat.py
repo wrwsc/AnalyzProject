@@ -115,7 +115,7 @@ def main():
     area_salary_trend['area_salary_rub'] = area_salary_trend['area_salary_rub'].round().astype(int)
     top_10_area_salary = area_salary_trend.head(10)
     print(top_10_area_salary)
-    plt.figure(figsize = (12, 8))
+    plt.figure(figsize = (12, 10))
     plt.barh(top_10_area_salary['area_name'], top_10_area_salary['area_salary_rub'])
     plt.title('Топ 10 городов по уровню зарплат')
     plt.xlabel('Средняя зарплата (руб)')
