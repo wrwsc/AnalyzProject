@@ -49,6 +49,7 @@ p {
     position: absolute;
     left: 20px;
     top: 20px;
+    z-index: 1002
 }
 
 .burger span {
@@ -68,7 +69,7 @@ p {
     background: #D1C7B7;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease;
-    z-index: 999;
+    z-index: 1001;
 }
 
 
@@ -101,8 +102,9 @@ p {
 
 /* Контент */
 main {
-    margin-left: 250px;
+    margin-left: 0;
     padding: 120px 20px 60px;
+    transition: margin-left 0.3s ease;
 }
 
 /* Подвал */
@@ -127,17 +129,15 @@ footer {
 
 /* Стили для общего контейнера */
 .full-container {
-    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    background-color: #D1C7B7;
-    margin: 0;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1400px;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background-color: #D1C7B7;
+    margin: auto;
 }
 
 /* Стили для заголовков внутри контейнера */
@@ -202,13 +202,13 @@ footer {
 }
 
 .statistic-item .analytics {
-    width: 800px;
+    width: 100%;
     height: auto;
-    margin-right: 150px;
+    margin-right: 0;
 }
 
 .statistic-item .statistic-box {
-    width: 200px;
+    width: 100%;
     overflow-x: auto;
 }
 
@@ -295,7 +295,7 @@ footer {
     }
 
     main {
-        padding: 80px 10px 40px;
+        margin-left: 250px;
     }
 
     .full-container {
@@ -311,4 +311,9 @@ footer {
     .statistic-item .statistic-box {
         width: 100%;
     }
+}
+
+img.image-start {
+    max-width: 100%;
+    height: auto;
 }
