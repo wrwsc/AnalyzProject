@@ -272,13 +272,14 @@ footer {
 }
 
 /* Медиазапросы для адаптивной верстки */
+/* Responsive layout for all pages */
 @media (max-width: 768px) {
-    main {
-        margin-left: 0;
-        padding: 100px 20px 60px;
+    body {
+        font-size: 90%;
     }
 
     .full-container {
+        padding: 20px;
         width: 100%;
     }
 
@@ -287,13 +288,28 @@ footer {
         align-items: center;
     }
 
-    .statistic-item .analytics {
+    .statistic-item .analytics,
+    .statistic-item .statistic-box {
         width: 100%;
         margin-right: 0;
     }
 
-    .statistic-item .statistic-box {
-        width: 100%;
+    main {
+        margin-left: 0;
+        padding: 100px 20px 60px;
+    }
+
+    .burger {
+        left: 10px;
+        top: 10px;
+    }
+
+    .side-menu {
+        left: -250px;
+    }
+
+    .side-menu.active {
+        left: 0;
     }
 }
 
