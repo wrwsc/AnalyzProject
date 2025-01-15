@@ -1,13 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}
-    {% for stat in statistics %}
-        <h3>{{ stat.title }}</h3>
-    {% endfor %}
-{% endblock %}
 
+{% block title %}Общая статистика{% endblock %}
 {% block content %}
     <div class="full-container">
+        <h2>Общая статистика</h2>
         {% for stat in statistics %}
             <div class="statistic-item">
                 <div class="statistic-left">
