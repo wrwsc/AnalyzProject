@@ -310,6 +310,10 @@ footer {
     .side-menu.active {
         left: 0;
     }
+
+    .content{
+        font-size: auto;
+    }
 }
 
 img.image-start {
