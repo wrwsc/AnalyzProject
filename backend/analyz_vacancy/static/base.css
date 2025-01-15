@@ -135,7 +135,7 @@ footer {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 1400px;
+    max-width: 1400px;
     justify-content: center;
     align-items: center;
 }
@@ -267,5 +267,31 @@ footer {
 
     .burger {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-left: 0;
+        padding: 100px 20px 60px;
+    }
+
+    .full-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .statistic-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .statistic-item .analytics {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .statistic-item .statistic-box {
+        width: 100%;
     }
 }
