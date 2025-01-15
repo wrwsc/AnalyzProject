@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--^q7l1nby42@ve&x!eo=#*fchf1hx^70=m2cybi$0fnj+#n8*d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,9 +52,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'analyz_vacancy.urls'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
 
 TEMPLATES_DIR = BASE_DIR / 'templates'
 
@@ -130,4 +127,4 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
