@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #2e2e2e;
+    font-size: 100%;
 }
 
 /* Заголовок */
@@ -157,6 +158,7 @@ footer {
 .center-image {
     text-align: center;
     margin-top: 20px;
+    height: auto;
 }
 
 .background {
@@ -185,6 +187,18 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .statistic-item {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .full-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .statistic-item .analytics {
@@ -244,4 +258,14 @@ footer {
 .www th, .www td {
     padding: 0;
     margin: 0;
+}
+
+@media (min-width: 768px) {
+    .side-menu {
+        display: block;
+    }
+
+    .burger {
+        display: none;
+    }
 }
